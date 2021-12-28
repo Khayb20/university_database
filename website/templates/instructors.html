@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Instructors{% endblock %}
+
+{% block content %} 
+<h2 align='center'>Instructor Table</h2>
+<table class="table table-striped table-bordered table-hover">
+    <tr class="bg-dark text-white">
+        <th>Instructor ID</th>
+        <th>Instructor Name</th>
+        <th>Instructor email</th>
+        <th>Department ID</th>
+        <th>Actions</th>
+    </tr>
+    {% for i in instructor %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.fullname }}</td>
+            <td>{{ i.email }}</td>
+            {% for d in department %} {% if i.dept_id == d.id %}
+            <td>{{ d.name }}</td>
+            {% endif %}{% endfor %}
+            <td>
+                <a href="/instructors/update/{{i.id}}">Edit</a>
+                <br>
+                <a href="/instructors/delete/{{i.id}}">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<div class="form" align='center'>
+    <form action="/instructors" method="POST">
+        <input type="text" name="fullname" id="fullname" required placeholder="Enter fullname">
+        <input type="email" name="email" id="email" required placeholder="Enter email">
+        <input type="text" name="dept_id" id="dept_id" placeholder="Enter department id">
+        <input type="submit" value="Add Instructor">
+    </form>
+</div>
+
+
+{% endblock %}

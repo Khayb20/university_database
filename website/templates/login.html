@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url('{{url_for('static',filename = 'images/ashimg.jpeg')}}');   
+    }
+    .row{
+        background: white;
+        border-radius: 30px;
+    }
+    img{
+        height: 450px;
+        width: 450px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    .btn1{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100px;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    .btn1:hover{
+        background: white;
+        border: 1px solid;
+        color: black;
+    }
+    .form-control{
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        border-color: #00ac96 !important;
+        border-style: solid !important;
+        border-width: 0 0 1px 0 !important;
+        padding: 0px !important;
+        color: #495057;
+        height: auto;
+        border-radius: 0;
+        background-color: #fff;
+        background-clip: padding-box;
+    }
+    .form-control:focus{
+        color: #495057;
+        background-color: #fff;
+        border-color: #fff;
+        outline: 0;
+        box-shadow: none;
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<section class="Form my-5 mx-5 pt-5">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-5">
+                <img src="{{url_for('static',filename = 'images/stsika.jpeg')}}" alt="">
+            </div>
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weigth-bold py-3">SIKA DATABASE</h1>
+                <h4>Sign into your account</h4>
+                <form method="POST">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="email" class="form-control my-3 p-4" id="email" name="email" placeholder="Enter email"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" class="form-control my-3 p-4" id="password" name="password" placeholder="Enter password"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-5">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

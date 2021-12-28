@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Update Course{% endblock %}
+
+{% block content %} 
+
+<section class="Form my-5 mx-5 pt-4"> 
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-7 px-5 pt-5">
+                <h1>Edit</h1>
+                <form method="POST">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <p>Change course name</p>
+                            <input type="text" class="form-control my-3 p-4" name="name" id="name" value="{{course.name}}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <p>Change instructor ID</p>
+                            <input type="text" class="form-control my-3 p-4" name="instructors_id" id="instructors_id" value="{{course.instructors_id}}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <p>Change department ID</p>
+                            <input type="text" class="form-control my-3 p-4" name="departments_id" id="departments_id" value="{{course.departments_id}}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="submit" value="Update">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
